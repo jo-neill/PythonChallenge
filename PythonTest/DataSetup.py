@@ -15,7 +15,7 @@ def create_combined_csv(output_file):
     extension = 'csv'
     all_filenames = [i for i in glob.glob('*.{}'.format(extension))]
 
-    #Combine all the files in the list using pandas
+    # Combine all the files in the list using pandas
     combined_csv = pd.concat([pd.read_csv(f) for f in all_filenames ], sort=False)
 
     # Export the combined data to a single csv in the data folder
