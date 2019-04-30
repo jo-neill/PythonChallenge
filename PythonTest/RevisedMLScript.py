@@ -10,7 +10,7 @@
 ### care of all CSV augmentation needed before getting into the training of our model.
 ###
 ### @Author: Joe O'Neill
-import DataSetup
+import RevisedDataSetup
 import os
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -40,8 +40,8 @@ def test_model(model):
     print (f'Predicted Relevance Score for {test_project_size}: \n', model.predict([[test_project_size]]))
 
 def main():
-    DataSetup.main()
-    DataSetup.set_directory('../')
+    RevisedDataSetup.main()
+    RevisedDataSetup.set_directory('../')
     X_train, y_train = init_data('data/complete_data.csv')
     model = train_model(X_train, y_train)
     test_model(model)
